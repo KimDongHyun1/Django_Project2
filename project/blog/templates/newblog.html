@@ -1,0 +1,17 @@
+<!-- forms.py를 만들어 재사용이 편하고 간단하게 만들었다.-->
+{% extends 'base.html' %}
+{% block content %}
+<h1>Forms.py로 만든 url</h1>
+<br>
+
+<div class='container'>
+    <form method='POST'>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input class="btn btn-dark" type="submit" value="제출하기">
+    </form>
+</div>
+{% endblock %}
